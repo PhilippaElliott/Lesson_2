@@ -2,13 +2,25 @@
 # ask for operation
 # perform operation
 # output results
+
+# at the top of file
+
+require 'yaml'
+MESSAGES = YAML.load_file('calculator_messages.yml')
+
 def prompt(message)
   puts("=> #{message}")
 end
 
-def valid_number?(num)
-  num.to_i() != 0
+def integer?(num)
+  num.to_i.to_s == num
 end
+
+def float?(num)
+  num.to_f.to_s == num
+end
+
+
 
 def operation_to_message(op)
   case op
@@ -23,13 +35,14 @@ def operation_to_message(op)
   end
 end
 
-prompt("Welcome to calculator. Please enter your name.")
+prompt(MESSAGES['ge']['welcome'])
 name = ''
 loop do
   name = gets.chomp
 
   if name.empty?()
-    prompt("Make sure to use a valid name")
+    
+prompt(MESSAGES['ge']['valid_name'])
   else
     break
   end
@@ -39,24 +52,25 @@ prompt("Hi #{name}!")
 loop do # main loop
   number1 = ''
   loop do
-    prompt("What's your first number?")
+    
+prompt(MESSAGES['ge']['first_number'])
     number1 = gets.chomp
 
-    if valid_number?(number1)
+    if integer?(number1) || float?(number1)
       break
     else
-      prompt("That's not a valid number")
+      prompt(MESSAGES['ge']['not_valid_number'])
     end
   end
 
   number2 = ''
   loop do
-    prompt("What's your second number?")
+    prompt(MESSAGES['ge']['second_number'])
     number2 = gets.chomp
-    if valid_number?(number2)
+    if integer?(number2) || float?(number2)
       break
     else
-      prompt("That's not a valid number")
+      prompt(MESSAGES['ge']['not_valid_number'])
     end
   end
 

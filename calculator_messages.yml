@@ -1,0 +1,14 @@
+
+en:
+  welcome: "Welcome to Calculator! Enter your name:"
+  valid_name: "Make sure to enter a valid name."
+  first_number: "What's your first number?"
+  second_number: "What's your second number?"
+  not_valid_number: "That's not a valid number"
+
+ge:
+  welcome: "Willkommen bei Calculator! Gib deinen Namen ein:"
+  valid_name: "Stellen Sie sicher, dass Sie einen gültigen Namen eingeben."
+  first_number: "Was ist deine erste Nummer?"
+  second_number: "Was ist deine zweite Nummer?"
+  not_valid_number: "Das ist keine gültige Nummer"

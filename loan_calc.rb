@@ -1,4 +1,3 @@
-
 LANGUAGE = 'en'
 
 require 'yaml'
@@ -17,12 +16,11 @@ def valid_number?(num)
 end
 
 loop do
-
   name = ''
   loop do
-    prompt(messages("welcome", LANGUAGE ))
+    prompt(messages("welcome", LANGUAGE))
     name = gets.chomp
-    if name.empty?()        
+    if name.empty?()
       prompt(messages("valid_name", LANGUAGE))
     else
       break
@@ -35,7 +33,7 @@ loop do
     amount = gets.chomp
     if valid_number?(amount)
       break
-    else 
+    else
       prompt(messages("valid_number", LANGUAGE))
     end
   end
@@ -53,18 +51,17 @@ loop do
 
   dur_month = duration.to_i * 12
 
-  prompt("Your loan duration in months is #{dur_month} ")
-  
+  prompt("Your loan duration in months is #{dur_month}")
+
   prompt(messages("apr", LANGUAGE))
   apr = gets.chomp.to_f
 
-  int_month = (apr / 100) /12
-  
+  int_month = (apr / 100) / 12
 
   prompt("your monthly interest rate is #{int_month}")
 
-
-  monthly_payment = amount.to_i * (int_month / (1 - (1 + int_month)**(-dur_month)))
+  monthly_payment =
+    amount.to_i * (int_month / (1 - (1 + int_month)**(-dur_month)))
   monthly_payment_round = monthly_payment.round(2)
   prompt("Your monthly payment will be $#{monthly_payment_round}")
 
@@ -74,5 +71,4 @@ loop do
     break
   end
 end
-    prompt(messages("thank_you", LANGUAGE))
-    
+prompt(messages("thank_you", LANGUAGE))

@@ -3,10 +3,13 @@ en:
   valid_name: "Make sure to enter a valid name."
   amount: "What is the amount of your loan"
   duration: "What is your loan duration in years?"
-  valid_number: "Please enter a valid number"
+  valid_number: "Please enter a valid number (zero is not a valid number)"
   apr: "What is the annual interest rate of your loan?"
   go_again: "Would you like to calculate another monthly loan repayment? (y/n)"
   thank_you: "Thank you for using this service"
+  duration_months: "Your loan duration in months is..."
+  apr_monthly: "your monthly interest rate is..."
+  monthly_repayment: "Your monthly payment will be..."
 
 ge:
   welcome: "Willkommen beim Kreditrechner. Bitte geben Sie Ihren Namen ein:"
@@ -17,3 +20,6 @@ ge:
   apr: "Wie hoch ist der jährliche Zinssatz Ihres Darlehens??"
   go_again: "Möchten Sie eine weitere monatliche Kreditrückzahlung berechnen? (j/n)"
   thank_you: "Vielen Dank, dass Sie diesen Service nutzen."
+  duration_months: "Ihre Darlehenslaufzeit in Monaten beträgt..."
+  apr_monthly: "Ihr monatlicher Zinssatz ist..."
+  monthly_repayment: "Ihre monatliche Zahlung wird sein..."

@@ -16,15 +16,13 @@ def valid_number?(num)
   num.to_i.to_s == num || num.to_f.to_s == num
 end
 
-
 loop do
-
   name = ''
   loop do
-    prompt(messages("welcome", LANGUAGE ))
+    prompt(messages("welcome", LANGUAGE))
     name = gets.chomp
     sleep(1)
-    if name.empty?()        
+    if name.empty?()
       prompt(messages("valid_name", LANGUAGE))
     else
       break
@@ -35,11 +33,10 @@ loop do
   loop do
     prompt(messages("amount", LANGUAGE))
     amount = gets.chomp
-        if  amount.to_i != 0
+    if amount.to_i != 0
       break
     else
       prompt(messages("valid_number", LANGUAGE))
-     
     end
   end
   sleep(1)
@@ -47,7 +44,7 @@ loop do
   loop do
     prompt(messages("duration", LANGUAGE))
     duration = gets.chomp
-    if valid_number?(duration) 
+    if valid_number?(duration)
       break
     else
       prompt(messages("valid_number", LANGUAGE))
@@ -59,29 +56,27 @@ loop do
   sleep(1)
 
   prompt(messages("duration_months", LANGUAGE))
-  
-  prompt "#{dur_month}"
-  
+  prompt dur_month.to_s
   apr = ''
   loop do
     prompt(messages("apr", LANGUAGE))
     apr = gets.chomp
     if valid_number?(apr)
       break
-    else 
+    else
       prompt(messages("valid_number", LANGUAGE))
     end
   end
 
-  int_month = (apr.to_f / 100) /12
+  int_month = (apr.to_f / 100) / 12
 
   sleep(1)
   prompt(messages("apr_monthly", LANGUAGE))
   sleep(1)
-  prompt "#{int_month}"
+  prompt int_month.to_s
 
-
-  monthly_payment = amount.to_i * (int_month / (1 - (1 + int_month)**(-dur_month)))
+  monthly_payment =
+    amount.to_i * (int_month / (1 - (1 + int_month)**(-dur_month)))
   monthly_payment_round = monthly_payment.round(2)
   sleep(1)
   prompt(messages("monthly_repayment", LANGUAGE))
@@ -97,4 +92,4 @@ loop do
 end
 
 system "clear"
-prompt(messages("thank_you", LANGUAGE)) 
+prompt(messages("thank_you", LANGUAGE))
